@@ -1,60 +1,47 @@
-﻿int number = 595787;
-string numberAsString = number.ToString(); //"595787"//
-char[] letters = numberAsString.ToArray(); // 5 9 5 7 8 7 //
+﻿
+using ChallangeApp;
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+Employee employee1 = new Employee("Michał", "Walencik", 32, 0);
+Employee employee2 = new Employee("Adam", "Kamizelich", 40, 0);
+Employee employee3 = new Employee("Bartek", "Karski", 33, 0);
 
-foreach (char letter in letters)
+
+employee1.AddScore(5);
+employee1.AddScore(5);
+employee1.AddScore(7);
+employee1.AddScore(8);
+
+employee2.AddScore(8);
+employee2.AddScore(9);
+employee2.AddScore(4);
+employee2.AddScore(6);
+
+employee3.AddScore(4);
+employee3.AddScore(10);
+employee3.AddScore(8);
+employee3.AddScore(2);
+
+
+List<Employee> employees = new List<Employee>()
 {
-    if (letter == '0')
-    {counter0++;}
-    
-    else if (letter == '1')
-    {counter1++;}
+    employee1, employee2, employee3
+};
+ 
 
-    else if (letter == '2')
-    {counter2++;}
+int maxResult = -1;
+Employee employeeWithMaxResult = null;
 
-    else if (letter == '3')
-    {counter3++;}
 
-    else if (letter == '4')
-    {counter4++;}
-
-    else if (letter == '5')
-    {counter5++;}
-
-    else if (letter == '6')
-    {counter6++;}
-
-    else if (letter == '7')
-    {counter7++;}
-
-    else if (letter == '8')
-    {counter8++;}
-
-    else if (letter == '9')
-    {counter9++;}
+foreach(var employee in employees)
+{
+    if (employee.Result > maxResult)
+    {
+        maxResult = employee.Result;
+        employeeWithMaxResult = employee; 
+    }
 }
 
-Console.WriteLine("number:" + numberAsString + " contain:"); 
-
-Console.WriteLine("digit 0 => " + counter0);
-Console.WriteLine("digit 1 => " + counter1);
-Console.WriteLine("digit 2 => " + counter2);
-Console.WriteLine("digit 3 => " + counter3);
-Console.WriteLine("digit 4 => " + counter4);
-Console.WriteLine("digit 5 => " + counter5);
-Console.WriteLine("digit 6 => " + counter6);
-Console.WriteLine("digit 7 => " + counter7);
-Console.WriteLine("digit 8 => " + counter8);
-Console.WriteLine("digit 9 => " + counter9);
+Console.WriteLine("Imię:" + employeeWithMaxResult.Name);
+Console.WriteLine("Nazwisko:" + employeeWithMaxResult.Surname);
+Console.WriteLine("wiek:" + employeeWithMaxResult.Age);
+Console.WriteLine("wynik:" + employeeWithMaxResult.Result); 
