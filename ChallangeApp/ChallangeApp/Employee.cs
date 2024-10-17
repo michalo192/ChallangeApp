@@ -10,7 +10,6 @@
 
         }
 
-
         public string Name { get; private set; }
 
         public int Age { get; private set; }
@@ -18,16 +17,12 @@
         public string Surname { get; private set; }
 
 
-
         private List<int> score = new List<int>();
 
 
         public int Result
         {
-            get
-            {
-                return this.score.Sum();
-            }
+            get {return this.score.Sum();}
         }
 
         public void AddScore(int number)
