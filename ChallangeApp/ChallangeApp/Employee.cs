@@ -26,6 +26,5 @@
         {
             this.score.Add(number);
         }
-
     }
 }
