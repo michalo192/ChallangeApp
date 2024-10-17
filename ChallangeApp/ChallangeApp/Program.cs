@@ -1,5 +1,4 @@
-﻿
-using ChallangeApp;
+﻿using ChallangeApp;
 
 Employee employee1 = new Employee("Michał", "Walencik", 32, 0);
 Employee employee2 = new Employee("Adam", "Kamizelich", 40, 0);
