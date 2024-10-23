@@ -14,7 +14,7 @@
 
         public string Surname { get; private set; }
 
-
+        
         private List<int> score = new List<int>();
 
         public int Result
